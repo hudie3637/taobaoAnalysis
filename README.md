@@ -22,9 +22,9 @@
     python agent.py
     通过命令行与agent进行交互   
    -  注1：为了更快得到输出结果，我只使用了前5条用户评论，agent推理最大迭代次数设为2
-        要是想使用全部评论，可以注释掉comments = comments[:5]，
-        agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=model, max_steps=2, step_callbacks=[recorder])
-        修改max_steps自行设置最大迭代次数
+        要是想使用全部评论，可以注释掉comments = comments[:5]。        
+        修改agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=model, max_steps=2, step_callbacks=[recorder])
+         中max_steps自行设置最大迭代次数
    - 注2：我在Infor.conf设置了爬取淘宝xtool用户评价的url,Cookie,referer
         由于不同设备登陆淘宝，网页的cookie会不一样，
         所以爬虫程序会无法自动爬取信息，会直接使用我已经爬取好的用户评价 
