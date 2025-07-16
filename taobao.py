@@ -20,7 +20,7 @@ def crawlerTaobao(num):
             'accept':'*/*'
         }
         req = requests.get(url, headers=headers)
-        print('状态码：{}'.format(req.status_code))
+        # print('状态码：{}'.format(req.status_code))
         return req.text
     except:
         print("获取淘宝页面出现异常")
