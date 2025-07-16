@@ -7,7 +7,7 @@
 - `frontend/`：React 前端页面
 - `Image/`：示例图片
 ## 运行前准备
-    -Python 依赖安装
+    - Python 依赖安装
       pip install matplotlib smolagents duckduckgo-search fastapi uvicorn
    - Node 依赖（前端）：
      cd frontend
@@ -20,8 +20,12 @@
   ### 方法一
     在 `taobaoAnalysis` 目录下运行：
     python agent.py
-    通过命令行与agent进行交互
-    注：我在Infor.conf设置了爬取淘宝xtool用户评价的url,Cookie,referer
+    通过命令行与agent进行交互   
+    (为了更快得到输出结果，我只使用了前5条用户评论，agent推理最大迭代次数设为2
+    要是想使用全部评论，可以注释掉comments = comments[:5]，
+    agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=model, max_steps=2, step_callbacks=[recorder])
+    修改max_steps自行设置最大迭代次数)
+    - 注：我在Infor.conf设置了爬取淘宝xtool用户评价的url,Cookie,referer
         由于不同设备登陆淘宝，网页的cookie会不一样，
         所以爬虫程序会无法自动爬取信息，会直接使用我已经爬取好的用户评价 
         例如：Input/xtool0.txt
